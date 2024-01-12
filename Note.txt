@@ -1,0 +1,19 @@
+## JSP
+/src/main/resources/META-INF/resources/WEB-INF/say-Hello.jsp
+
+/say-Hello-jsp  ======>> SayHelloController ===>> sayHelloJsp method  ===> sayHello
+
+/WEB-INF/jsp/sayHello.jsp
+
+## Login JSP
+/login ==> com.learnspring.springboot.myfirstwebapp.login.LoginController ===> login.jsp
+
+#Todo
+id
+username
+description
+targetDate
+done
+
+TodoController
+listTods.jsp
