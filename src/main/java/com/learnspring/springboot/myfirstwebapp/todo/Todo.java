@@ -1,7 +1,9 @@
 package com.learnspring.springboot.myfirstwebapp.todo;
 
+import org.springframework.boot.convert.DataSizeUnit;
 import org.springframework.stereotype.Controller;
 
+import javax.validation.constraints.Size;
 import java.time.LocalDate;
 
 
@@ -9,7 +11,9 @@ import java.time.LocalDate;
 //Static List of TODOs ===> Database(H2 or Mysql)
 
 public class Todo {
+
     public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
+        super();
         this.id = id;
         this.username = username;
         this.description = description;
@@ -19,8 +23,11 @@ public class Todo {
 
     private int id;
     private String username;
+
+    @Size(min=10, message="Enter atleast 10 characters")
     private String description;
     private LocalDate targetDate;
+    private boolean done;
 
     public int getId() {
         return id;
@@ -62,16 +69,10 @@ public class Todo {
         this.done = done;
     }
 
-    private boolean done;
-
     @Override
     public String toString() {
-        return "Todo{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", description='" + description + '\'' +
-                ", targetDate=" + targetDate +
-                ", done=" + done +
-                '}';
+        return "Todo [id=" + id + ", username=" + username + ", description=" + description + ", targetDate="
+                + targetDate + ", done=" + done + "]";
     }
+
 }
